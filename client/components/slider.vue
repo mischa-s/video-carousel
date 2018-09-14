@@ -1,7 +1,7 @@
 <template>
-  <tiny-slider :mouse-drag="true" :loop="true" items="4" gutter="20">
+  <tiny-slider v-bind:mouse-drag="true" v-bind:loop="true" items="4" gutter="20">
     <div class="image" tabindex="0" v-for="image, imageIndex in items">
-      <img :src="image.poster">
+      <img v-bind:src="image.poster">
       <p> {{image.title}} </p>
     </div>
   </tiny-slider>
@@ -21,9 +21,6 @@ export default {
       videos: this.items,
     };
   },
-  mounted: function () {
-    console.log(this, 'this!')
-  }
 }
 </script>
 
