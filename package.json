@@ -5,11 +5,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server"
   },
   "dependencies": {
+    "knex": "^0.15.2",
+    "node-fetch": "^2.2.0",
+    "parcel-bundler": "^1.9.7",
+    "pg": "^7.4.3",
     "vue": "^2.5.17",
-    "vue-gallery": "^1.4.0"
+    "vue-gallery": "^1.4.0",
+    "vue-tiny-slider": "^0.1.27"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",
