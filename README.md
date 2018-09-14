@@ -24,8 +24,8 @@ Vue JS Video Player Objectives
 
 [x] videos in a horizontal scrollable carousel
 [x] select a video to play in full screen
-[ ] navigable with mouse and keyboard
+[x] adjust based on the desktop browser width
 [ ] on video finished, back to the previous page (onslideend?)
-[ ] view list of previously watched videos
-[ ] adjust based on the desktop browser width
 [ ] The viewing history should be saved on a server and persisted across browsing sessions (user refreshes the browser the history should be automatically loaded)
+[ ] view list of previously watched videos
+[ ] navigable with mouse and keyboard
