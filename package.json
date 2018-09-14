@@ -1,4 +1,7 @@
 {
+  "engines": {
+      "node": "8.9.1"
+  },
   "name": "jba-frontend-test",
   "version": "0.1.0",
   "private": true,

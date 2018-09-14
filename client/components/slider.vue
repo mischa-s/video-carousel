@@ -16,7 +16,7 @@ export default {
   },
   props: ['items'],
   data: function() {
-    console.log(this.items, 'these items')
+    // console.log(this.items, 'these items')
     return {
       videos: this.items,
     };
