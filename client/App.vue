@@ -8,26 +8,29 @@
         History
       </button>
   </nav>
-  <slider v-bind:items="items" />
+  <slider v-bind:items="items" v-bind:VueTinySlider="VueTinySlider" />
 </div>
 </template>
 
 <script>
 import slider from "./components/slider.vue";
 import VideoData from "./helper-functions/select-video-name-and-urls";
+import VueTinySlider from 'vue-tiny-slider';
+
 const data = require('./assets/data')
 
 export default {
   name: "app",
   components: {
-    slider
+    slider,
   },
   mounted() {
     this.fetchItems();
   },
   data() {
     return {
-      items: []
+      items: [],
+      VueTinySlider: this.VueTinySlider
     };
   },
   methods: {
