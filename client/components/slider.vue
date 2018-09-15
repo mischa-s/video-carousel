@@ -2,9 +2,8 @@
   <div id="carousel">
     <Carousel
       v-bind='{
-        perPage: 4,
+        perPage: 5,
         navigationEnabled: true,
-        scrollPerPage: true
       }'
       >
       <Slide
