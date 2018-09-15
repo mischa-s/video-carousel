@@ -8,14 +8,13 @@
         History
       </button>
   </nav>
-  <slider v-bind:items="items" v-bind:VueTinySlider="VueTinySlider" />
+  <slider v-bind:items="items" />
 </div>
 </template>
 
 <script>
 import slider from "./components/slider.vue";
 import VideoData from "./helper-functions/select-video-name-and-urls";
-import VueTinySlider from 'vue-tiny-slider';
 
 const data = require('./assets/data')
 
@@ -30,13 +29,14 @@ export default {
   data() {
     return {
       items: [],
-      VueTinySlider: this.VueTinySlider
     };
   },
   methods: {
     fetchItems() {
         const videos = data.source.videos.entries
         this.items = videos.map(VideoData)
+
+      // Was working then started getting blocked :(
       // fetch(
       //     "https://jbanew.staging.joybusinessacademy.com/api/v2/assignment/videos"
       //   )

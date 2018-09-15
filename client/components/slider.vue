@@ -1,6 +1,14 @@
 <template>
   <div id="carousel">
+      <VideoPlayer
+      v-if='videoUrl'
+      v-bind:videoUrl="videoUrl"
+      v-bind:videoPoster="videoPoster"
+      v-bind:navigateToHome="navigateToHome"
+      >
+    </VideoPlayer>
     <Carousel
+    v-else
       v-bind='{
         perPage: 5,
         navigationEnabled: true,
@@ -10,10 +18,12 @@
           v-for="(video, i) in items"
           :key="i"
           tabindex="0"
+          v-on:click="navigateToVideo(video.href)"
         >
         <img
           id="video-poster"
           v-bind="{src:video.poster}"
+          v-on:click="navigateToVideo(video.href)"
         />
         <p id="video-title">{{ video.title }}</p>
       </Slide>
@@ -24,12 +34,30 @@
 // ---SCRIPT---
 <script>
   import { Carousel, Slide } from 'vue-carousel'
+  import VideoPlayer from './video-player.vue'
+
   export default {
     components: {
       Carousel,
       Slide,
+      VideoPlayer
     },
-    props: ['items', 'addWatchedVideo'],
+    data() {
+      return {
+        videoUrl: false,
+        videoPoster: false,
+      };
+    },
+    props: ['items'],
+    methods: {
+      navigateToVideo: function(url, poster) {
+        this.videoUrl = url
+        this.videoPoster = poster
+      },
+      navigateToHome: function() {
+        this.videoUrl = false
+      }
+    }
   }
 </script>
 
