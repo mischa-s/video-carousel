@@ -1,33 +1,29 @@
-# jba-frontend-test
+# a little play with building a video carousel in vue
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Start the dev server
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm start
 ```
 
 Vue JS Video Player Objectives
 
-[x] videos in a horizontal scrollable carousel
-[x] select a video to play in full screen
-[x] adjust based on the desktop browser width
-[x] on video finished, back to the previous page (onslideend?)
-[ ] The viewing history should be saved on a server and persisted across browsing sessions (user refreshes the browser the history should be automatically loaded)
-[ ] view list of previously watched videos
-[ ] navigable with mouse and keyboard
+- [x] videos in a horizontal scrollable carousel
+- [x] select a video to play in full screen
+- [x] adjust based on the desktop browser width
+- [x] on video finished, back to the previous page
+- [ ] The viewing history should be saved on a server and persisted across browsing sessions (user refreshes the browser the history should be automatically loaded)
+- [ ] view list of previously watched videos
+- [ ] navigable with mouse and keyboard
 
-- if video id play video
+Next Steps
+- [x] if video id play video
+- [x] center video player
+- [x] add back link
+- [ ] save to history onClick
+- [ ] show history in history component
+- [ ] add keyboard navigation

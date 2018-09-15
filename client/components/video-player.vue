@@ -1,21 +1,24 @@
 <template>
-  <div class="player">
-    <video-player  class="vjs-custom-skin"
-                   ref="videoPlayer"
-                   :options="playerOptions"
-                   :playsinline="true"
-                   @play="onPlayerPlay($event)"
-                   @pause="onPlayerPause($event)"
-                   @ended="onPlayerEnded($event)"
-                   @loadeddata="onPlayerLoadeddata($event)"
-                   @waiting="onPlayerWaiting($event)"
-                   @playing="onPlayerPlaying($event)"
-                   @timeupdate="onPlayerTimeupdate($event)"
-                   @canplay="onPlayerCanplay($event)"
-                   @canplaythrough="onPlayerCanplaythrough($event)"
-                   @ready="playerReadied"
-                   @statechanged="playerStateChanged($event)">
-    </video-player>
+  <div class="playerContainer">
+    <div class="player">
+      <video-player  class="vjs-custom-skin"
+                     ref="videoPlayer"
+                     :options="playerOptions"
+                     :playsinline="true"
+                     @play="onPlayerPlay($event)"
+                     @pause="onPlayerPause($event)"
+                     @ended="onPlayerEnded($event)"
+                     @loadeddata="onPlayerLoadeddata($event)"
+                     @waiting="onPlayerWaiting($event)"
+                     @playing="onPlayerPlaying($event)"
+                     @timeupdate="onPlayerTimeupdate($event)"
+                     @canplay="onPlayerCanplay($event)"
+                     @canplaythrough="onPlayerCanplaythrough($event)"
+                     @ready="playerReadied"
+                     @statechanged="playerStateChanged($event)">
+      </video-player>
+      <button class='backButton' v-on:click="navigateToHome()"> Back to videos </button>
+    </div>
   </div>
 </template>
 
@@ -99,3 +102,18 @@
     }
   }
 </script>
+<style>
+.playerContainer {
+  display: flex;
+  justify-content: center
+
+}
+.backButton {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  margin: 1.5rem;
+}
+</style>

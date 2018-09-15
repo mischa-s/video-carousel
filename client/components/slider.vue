@@ -42,26 +42,16 @@
       Slide,
       VideoPlayer
     },
-    data() {
-      return {
-        videoUrl: false,
-        videoPoster: false,
-      };
-    },
-    props: ['items'],
+    props: ['items', 'navigateToHome', 'navigateToVideo', 'videoPoster', 'videoUrl'],
     methods: {
-      navigateToVideo: function(url, poster) {
-        this.videoUrl = url
-        this.videoPoster = poster
-      },
-      navigateToHome: function() {
-        this.videoUrl = false
-      }
     }
   }
 </script>
 
 <style>
+#carousel {
+  margin-top: 2rem
+}
 .vidoes {
   display: flex;
   flex: 0 0 auto;

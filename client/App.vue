@@ -1,14 +1,20 @@
 <template>
 <div id="app">
   <nav id="navbar">
-    <button id="button">
+    <button class="navButton" v-on:click="navigateToHome()">
         Home
       </button>
-    <button id="button">
+    <!-- <button class="navButton">
         History
-      </button>
+      </button> -->
   </nav>
-  <slider v-bind:items="items" />
+  <slider
+    v-bind:items= "items"
+    v-bind:navigateToHome="navigateToHome"
+    v-bind:navigateToVideo='navigateToVideo'
+    v-bind:videoPoster='videoPoster'
+    v-bind:videoUrl='videoUrl'
+    />
 </div>
 </template>
 
@@ -29,9 +35,19 @@ export default {
   data() {
     return {
       items: [],
+      videoUrl: false,
+      videoPoster: false,
     };
   },
+
   methods: {
+    navigateToHome: function() {
+      this.videoUrl = false
+    },
+    navigateToVideo: function(url, poster) {
+      this.videoUrl = url
+      this.videoPoster = poster
+    },
     fetchItems() {
         const videos = data.source.videos.entries
         this.items = videos.map(VideoData)
@@ -71,11 +87,11 @@ body {
   color: "white";
 }
 
-button {
+.navButton {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   height: 50px;
   background-color: transparent;
-  border: 1px solid black;
+  border: none;
   color: white;
   font-size: 25px;
   margin: 1.5rem;
